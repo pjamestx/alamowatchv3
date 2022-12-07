@@ -31,7 +31,7 @@ MARKET_START = 0000
 MARKET_END = 2500  # TODO - add automated check above this range and alert if new market is found
 MARKET_TEMPLATE = 'https://feeds.drafthouse.com/adcService/showtimes.svc/market/{:04d}/'
 
-#
+# create additional tweets if the content would exceed this length
 MAX_TWEET_LENGTH = 125
 
 # ignore these files when loading json files
