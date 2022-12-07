@@ -9,7 +9,7 @@ from models import Cinema, Film, CinemaSchema, SettingsSchema
 from private_keys import TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, GMAIL_USER, GMAIL_PASSWORD
 from util import download_json, prepare_film_name
 
-# if set to true, alerts will go to the log file and no data will saved
+# if set to true, all output will go to the console and no messages will be sent/no data will be saved
 DEBUG_MODE = True
 
 log_name = 'alamowatchv3-{}.log'.format(time.strftime("%Y%m%d"))
@@ -193,7 +193,7 @@ class AlamoWatch(object):
             server_ssl.close()
 
     @staticmethod
-    def write_theater(cinema):
+    def save_theater(cinema):
         """
         Saves the cinema json for the specified theater
         """
@@ -223,7 +223,7 @@ class AlamoWatch(object):
                 films = [x for x in cinema.Films if not x.AlertSent]
                 self.send_tweets(cinema, films)
                 self.send_emails(cinema, films)
-                self.write_theater(cinema)
+                self.save_theater(cinema)
             except Exception as ugh:
                 logger.error("Exception: {}".format(ugh))
 
