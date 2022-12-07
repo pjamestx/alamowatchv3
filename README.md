@@ -11,6 +11,8 @@ Basic python project, now updated for python 3.9
 
 Set up virtual environment, then `pip install -r requirements.txt`
 
+Copy `private_keys_example.py` to `private_keys.py` and supply the necessary Twitter/Gmail credentials
+
 ### Running
 
 `python alamowatch_v3`  
